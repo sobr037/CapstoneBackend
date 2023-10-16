@@ -1,6 +1,6 @@
 # Fairer Coffee (Backend Service)
 
-This is the backend service for the "Fairer Coffee" project. For the front-end part of the project, please visit [Project: X link](https://github.com/project-x).
+This is the backend service for the "Fairer Coffee" project. For the front-end part of the project, please visit [This link.](https://github.com/sobr037/CapstoneFrontend)
 
 This backend service is built using Node.js and connects to an SQL database table.
 
