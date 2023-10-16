@@ -1,0 +1,345 @@
+{
+    "swagger": "2.0",
+    "info": {
+    "version": "1.0.0",
+    "title": "Fairer Coffee",
+    "description": "Application API Guide.",
+    "license": {
+    "name": "Sam Obrien - IOT"
+    }
+    },
+    "host": "localhost:8080",
+    "basePath": "/",
+    "schemes": ["http"],
+    "consumes": ["application/json"],
+    "produces": ["application/json"],
+
+    "paths": {
+        "/inventory/green": {
+            "get": {
+                "tags": [
+                            "Green Coffee Functionality"
+                        ],
+                "summary": "Retrieves a list of available Green Coffees",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "This will return 200 response and a list of corresponding Green Coffees."
+                        }
+                    }
+            }
+        },
+        "/inventory/green/new": {
+            "post": {
+                "tags": [
+                    "Green Coffee Functionality"
+                ],
+                "summary": "Creates a new Green Coffee",
+                "parameters": [
+                    {
+                        "name": "producer_name",
+                        "in": "query",
+                        "description": "Producer Name"
+                    },
+                    {
+                        "name": "green_stock",
+                        "in": "query",
+                        "description": "Green Stock"
+                    },
+                    {
+                        "name": "roasted_stock",
+                        "in": "query",
+                        "description": "Roasted Stock"
+                    },
+                    {
+                        "name": "coffee_origin",
+                        "in": "query",
+                        "description": "Coffee Origin"
+                    },
+                    {
+                        "name": "coffee_elevation",
+                        "in": "query",
+                        "description": "Coffee Elevation"
+                    },
+                    {
+                        "name": "coffee_variety",
+                        "in": "query",
+                        "description": "Coffee Variety"
+                    },
+                    {
+                        "name": "coffee_processing",
+                        "in": "query",
+                        "description": "Coffee Processing"
+                    },
+                    {
+                        "name": "coffee_certifications",
+                        "in": "query",
+                        "description": "Coffee Certifications"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "This will return a 200 response and a return the newly created coffee."
+                    }
+            }   }
+        },
+        "/inventory/green/update": {
+            "put": {
+                "tags": [
+                    "Green Coffee Functionality"
+                ],
+                "summary": "Updates a green coffee",
+                "parameters": [
+                    {
+                        "name": "producer_name",
+                        "in": "required",
+                        "description": "Producer Name"
+                    },
+                    {
+                        "name": "green_stock",
+                        "in": "query",
+                        "description": "Green Stock"
+                    },
+                    {
+                        "name": "roasted_stock",
+                        "in": "query",
+                        "description": "Roasted Stock"
+                    },
+                    {
+                        "name": "coffee_origin",
+                        "in": "query",
+                        "description": "Coffee Origin"
+                    },
+                    {
+                        "name": "coffee_elevation",
+                        "in": "query",
+                        "description": "Coffee Elevation"
+                    },
+                    {
+                        "name": "coffee_variety",
+                        "in": "query",
+                        "description": "Coffee Variety"
+                    },
+                    {
+                        "name": "coffee_processing",
+                        "in": "query",
+                        "description": "Coffee Processing"
+                    },
+                    {
+                        "name": "coffee_certifications",
+                        "in": "query",
+                        "description": "Coffee Certifications"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "This will return 200 response and a list of corresponding Green Coffees."
+                        }
+                    }
+            }
+        },
+        "/inventory/profiles": {
+            "get": {
+                "tags": [
+                    "Coffee Profiles Functionality"
+                ],
+                "summary": "Retrieves a list of available Inventory Profiles",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "This will return 200 response and a list of corresponding Coffee Profiles."
+                        }
+                    }
+            }
+        },
+        "/inventory/profiles/new": {
+            "post": {
+                "tags": [
+                    "Coffee Profiles Functionality"
+                ],
+                "summary": "Creates a new Coffee Profile",
+                "parameters": [
+                    {
+                        "name": "profile_name",
+                        "in": "query",
+                        "description": "Profile Name"
+                    },
+                    {
+                        "name": "profile_origin",
+                        "in": "query",
+                        "description": "Profile Origin"
+                    },
+                    {
+                        "name": "profile_producers",
+                        "in": "query",
+                        "description": "Profile Producers"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "This will return 200 response and a list of corresponding Coffee Profiles."
+                        }
+                    }
+            }
+        },
+        "/inventory/profiles/update": {
+            "put": {
+                "tags": [
+                    "Coffee Profiles Functionality"
+                ],
+                "summary": "Updates an existing Coffee Profile",
+                "parameters": [
+                    {
+                        "name": "profile_name",
+                        "in": "required",
+                        "description": "Profile Name"
+                    },
+                    {
+                        "name": "profile_origin",
+                        "in": "query",
+                        "description": "Profile Origin"
+                    },
+                    {
+                        "name": "profile_producers",
+                        "in": "query",
+                        "description": "Profile Producers"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "This will return 200 response and a list of the updated profiles parameters." 
+                    }
+                }
+            }
+        },
+        "/orders": {
+            "get": {
+                "tags": [
+                    "Orders Functionality"
+                ],
+                "summary": "Retrieves a list Orders",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "This will return 200 response and a list of corresponding Orders."
+                        }
+                    }
+            }
+        },
+        "/orders/{order_id}": {
+            "get": {
+                "tags": [
+                    "Orders Functionality"
+                ],
+                "summary": "Retrieves an Order by ID",
+                "parameters": [
+                    {
+                        "name": "order_id",
+                        "in": "path",
+                        "required": true,
+                        "description": "ID of the Order"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "This will return a 200 response and the corresponding Order."
+                    },
+                    "404": {
+                        "description": "Order not found"
+                    }
+                }
+            }
+        },
+        "/orders/order_trace/{order_trace_value}": {
+            "get": {
+                "tags": [
+                    "Orders Functionality"
+                ],
+                "summary": "Retrieves an Order by Order Trace Value",
+                "parameters": [
+                    {
+                        "name": "order_trace_value",
+                        "in": "path",
+                        "required": true,
+                        "description": "Order Trace Value",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "This will return a 200 response and the corresponding Order."
+                    },
+                    "404": {
+                        "description": "Order not found"
+                    }
+                }
+            }
+        },
+        "/orders/import": {
+            "post": {
+                "tags": [
+                    "Orders Functionality"
+                ],
+                "summary": "Import a New Order",
+                "parameters": [
+                    {
+                        "name": "order_id",
+                        "in": "query",
+                        "description": "Order ID",
+                        "required": true
+                    },
+                    {
+                        "name": "order_date",
+                        "in": "query",
+                        "description": "Order Date",
+                        "required": true
+                    },
+                    {
+                        "name": "order_customer",
+                        "in": "query",
+                        "description": "Order Customer",
+                        "required": true
+                    },
+                    {
+                        "name": "order_total",
+                        "in": "query",
+                        "description": "Order Total",
+                        "required": true
+                    },
+                    {
+                        "name": "order_count",
+                        "in": "query",
+                        "description": "Order Count",
+                        "required": true
+                    },
+                    {
+                        "name": "order_volume",
+                        "in": "query",
+                        "description": "Order Volume",
+                        "required": true
+                    },
+                    {
+                        "name": "order_trace",
+                        "in": "query",
+                        "description": "Order Trace",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Order imported successfully"
+                    },
+                    "400": {
+                        "description": "Bad request. Invalid data provided."
+                    }
+                }
+            }
+        }
+    }
+
+
+
+    
+}
